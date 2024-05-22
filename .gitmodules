@@ -1,0 +1,3 @@
+[submodule "rfl-shiny-app"]
+	path = rfl-shiny-app
+	url = https://github.com/bohndesverband/rfl-shiny-app.git
