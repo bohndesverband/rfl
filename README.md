@@ -10,4 +10,5 @@ This repo includes all RFL relating reposetories as `git submodules`.
 
 | Repo                                                                       |
 | -------------------------------------------------------------------------- |
-| [RFL shiny app](https://github.com/bohndesverband/rfl-shiny-app/tree/main) |
+| [RFL shiny app](https://github.com/bohndesverband/rfl-shiny-app) |
+| [RFL data*](https://github.com/bohndesverband/rfl-data) |
