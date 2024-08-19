@@ -4,3 +4,6 @@
 [submodule "rfl-data"]
 	path = rfl-data
 	url = https://github.com/bohndesverband/rfl-data.git
+[submodule "test"]
+	path = test
+	url = https://github.com/bohndesverband/test.git

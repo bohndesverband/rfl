@@ -1,4 +1,6 @@
 library(here)
+library(ffscrapr)
+library(tidyverse)
 
 # https://www55.myfantasyleague.com/2022/options?L=63018&O=168
 
@@ -1724,6 +1726,17 @@ s2023 <- data.frame(
 # binding ----
 schedules <- rbind(s2016, s2017, s2018, s2019, s2020, s2021, s2022, s2023)
 
-write.table(schedules, "fantasy/rfl/data/rfl-schedules.csv", row.names = F, col.names = T, sep = ",")
+schedule <- ffscrapr::ff_schedule(
+  ffscrapr::mfl_connect(2024, 63018)
+) %>%
+  dplyr::mutate(
+    season = "2024",
+    # week with leading 0
+    week = as.character(str_pad(week, 2, pad = "0"))
+  ) %>%
+  dplyr::select(season, week, franchise_id, opponent_id)
+
+
+write.table(schedule, "rfl-data/data/rfl-schedules.csv", row.names = F, col.names = F, sep = ",", append = T)
 rm(s2016, s2017, s2018, s2019, s2020, s2021, s2022, s2023, schedules)
 
